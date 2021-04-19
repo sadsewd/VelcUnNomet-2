@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//Jāimportē, lai varētu strādāt ar EventSystems
 using UnityEngine.EventSystems;
 
 public class DragDropScript : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
@@ -20,27 +21,32 @@ public class DragDropScript : MonoBehaviour, IPointerDownHandler, IBeginDragHand
         velkObjektTransf = GetComponent<RectTransform>();
     }
 
+    //Nostrādā nospiežot peles klikšķi uz objekta
     public void OnPointerDown(PointerEventData notikums)
     {
         Debug.Log("Uzklikšķināts uz velkamā objekta!");
     }
 
+    //Nostrādā uzsākot vilkšanu
     public void OnBeginDrag(PointerEventData notikums)
     {
         Debug.Log("Uzsākta vilkšana");
-        //Attīra pēdejo vilkto objektu
+        //Attīra pēdējo vilkto objektu
         objektuSkripts.pedejaisVilktais = null;
+        //Uzsākot vilkt objektu tas paliek nedaudz caurspīdīgs
         kanvasGrupa.alpha = 0.6f;
         //Lai objektam varētu iet cauri RayCast stars
         kanvasGrupa.blocksRaycasts = false;
     }
 
+    //Nostrādā reāli notiekot vilkšanai
     public void OnDrag(PointerEventData notikums)
     {
         Debug.Log("Notiek vilkšana!");
         velkObjektTransf.anchoredPosition += notikums.delta / objektuSkripts.kanva.scaleFactor;
     }
 
+    //Nostrādā, kad tiek beigta vilkšana
     public void OnEndDrag(PointerEventData notikums)
     {
         //Atlaižot objektu iestata to kā pēdējo vilkto

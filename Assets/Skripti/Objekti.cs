@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Objekti : MonoBehaviour
 {
+    //GameObject, kas uzglabā visus velkamos objektus
     public GameObject atkritumuMasina;
     public GameObject atroMasina;
     public GameObject autobuss;
-    //Uzglabās velkamo objektu sākotnējās pozīcijas koordinātas
+
+    /*Uzglabās velkamo objektu sākotnējās pozīcijas
+    koordinātas (lai zinātu, kur aizmest objektu, ja tas nolikts nepareizajā vietā)*/
     //Objekti paliek Public, taču paslēpj no Inspector loga
     [HideInInspector]
     public Vector2 atkrKoord;
@@ -21,12 +24,12 @@ public class Objekti : MonoBehaviour
     public AudioSource skanasAvots;
     //Masīvs, kas uzglabās visas skaņas
     public AudioClip[] skanaKoAtskanot;
-    //Uzglabās objektu, kurš ir pēdējais parvietotais
+    //Uzglabās objektu, kurš ir pēdējais pārvietotais
+    [HideInInspector]
     public GameObject pedejaisVilktais = null;
     //Mainīgais atbild par to vai objekts ir nolikts pareizi vai nepareizi
     [HideInInspector]
     public bool vaiIstajaVieta = false;
-
 
     //Funkcija nostrādā tiklīdz nospiesta play poga
     private void Awake()

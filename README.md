@@ -3,5 +3,5 @@
 - [x] Izveidot GitHub repo
 - [x] Sagatavot Unity projektu darba uzsākšanai (mapes, bildes, skaņas)
 - [x] Realizēt objektu vilkšanu un nomešanu (uz kartes, nepareizi, pareizi)
-- [ ] Realizēt objektu transformācijas (izmera maiņa, rotacija)
+- [x] Realizēt objektu transformācijas (izmera maiņa, rotacija)
 - [ ] Realizēt laika  atskaiti un uzvaras logu (laiks, zvaigznītes)
