@@ -36,6 +36,8 @@ public class NomesanasVieta : MonoBehaviour, IDropHandler
                 xIzmeruStarpiba = Mathf.Abs(vietasIzm.x - velkObjIzm.x);
                 yIzmeruStarpiba = Mathf.Abs(vietasIzm.y - velkObjIzm.y);
 
+                Debug.Log(vietasIzm.x + "   " + velkObjIzm.x);
+
                 //Pārbauda vai objektu savstarpējā rotācija neatšķiras vairāk par 9 grādiem
                 //un vai x un y izmēri neatšķiras vairāk par 0.15
                 if ((rotacijasStarpiba <= 9 || (rotacijasStarpiba >= 351 && rotacijasStarpiba <= 360))
@@ -53,8 +55,7 @@ public class NomesanasVieta : MonoBehaviour, IDropHandler
                        GetComponent<RectTransform>().localScale;
 
 
-                    /*Pārbauda pēc tagiem, kurš no objektiem ir pareizi nomests, tad 
-                    atskaņo atbilstošo skaņu*/
+                    //Pārbauda pēc tagiem, kurš no objektiem ir pareizi nomests, tad atskaņo atbilstošo skaņu
                     switch (notikums.pointerDrag.tag)
                     {
                         case "Atkritumi":
@@ -82,8 +83,7 @@ public class NomesanasVieta : MonoBehaviour, IDropHandler
                 //Atskaņo skaņu
                 objektuSkripts.skanasAvots.PlayOneShot(objektuSkripts.skanaKoAtskanot[0]);
 
-                /*Atkarībā no objektu taga, kurš tika vilkts, 
-                 * objekt uaizbīda uz tā sākotnējām koordinātām*/
+                //Atkarībā no objektu taga, kurš tika vilkts, objektu aizbīda uz tā sākotnējām koordinātām
                 switch (notikums.pointerDrag.tag)
                 {
                     case "Atkritumi":
@@ -100,7 +100,47 @@ public class NomesanasVieta : MonoBehaviour, IDropHandler
                         objektuSkripts.autobuss.GetComponent<RectTransform>().localPosition =
                             objektuSkripts.bussKoord;
                         break;
+                    
+                    case "Traktors1":
+                        objektuSkripts.traktors1.GetComponent<RectTransform>().localPosition =
+                            objektuSkripts.trak1Koord;
+                        break;
 
+                    case "Traktors5":
+                        objektuSkripts.traktors5.GetComponent<RectTransform>().localPosition =
+                            objektuSkripts.trak5Koord;
+                        break;
+
+                    case "Ugunsdzeseji":
+                        objektuSkripts.ugunsdzeseji.GetComponent<RectTransform>().localPosition =
+                            objektuSkripts.ugunsKoord;
+                        break;
+
+                    case "b2":
+                        objektuSkripts.b2.GetComponent<RectTransform>().localPosition =
+                            objektuSkripts.b2Koord;
+                        break;
+
+                    case "Cementa":
+                        objektuSkripts.cementaMasina.GetComponent<RectTransform>().localPosition =
+                            objektuSkripts.cementaKoord;
+                        break;
+
+                    case "e46":
+                        objektuSkripts.e46.GetComponent<RectTransform>().localPosition =
+                            objektuSkripts.e46Koord;
+                        break;
+
+                    case "Eskavators":
+                        objektuSkripts.eskavators.GetComponent<RectTransform>().localPosition =
+                            objektuSkripts.eskavatoraKoord;
+                        break;
+
+                    case "Policija":
+                        objektuSkripts.policija.GetComponent<RectTransform>().localPosition =
+                            objektuSkripts.policijaKoord;
+                        break;
+                    
                     default:
                         Debug.Log("Objektam nav noteikta pārvietošanas vieta!");
                         break;
