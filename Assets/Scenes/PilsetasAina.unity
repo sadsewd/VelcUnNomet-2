@@ -2146,10 +2146,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f0c8b85efe691f24eb8d8888650436aa, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 0.3
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -2730,6 +2730,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 788d6d8e53c59bf43972851b1345c06c, type: 3}
   - {fileID: 8300000, guid: 26c29be961085e043b1c05f8eb83f988, type: 3}
   - {fileID: 8300000, guid: 5c9e7d4eaf617304ab07cb8934c810ed, type: 3}
+  - {fileID: 8300000, guid: d0f689cdaa172604badb3084469deddd, type: 3}
+  - {fileID: 8300000, guid: 1241d1a6facfbb24eb5a5b8830258b3a, type: 3}
+  - {fileID: 8300000, guid: ea9633529de67634cb9a203fcbc95047, type: 3}
+  - {fileID: 8300000, guid: e0e6b1e32a2f83c4fb4639ad96683c9c, type: 3}
+  - {fileID: 8300000, guid: dc64fe7530eea504a97d85221ab80e42, type: 3}
+  - {fileID: 8300000, guid: ff67dab0676a797479b265414b08d2b0, type: 3}
+  - {fileID: 8300000, guid: 89c8c150ee023a640afa252508a85bcb, type: 3}
+  - {fileID: 8300000, guid: ace6f4e7ba90e394cb679f05029c17e9, type: 3}
   pedejaisVilktais: {fileID: 0}
   vaiIstajaVieta: 0
 --- !u!4 &2081839246
