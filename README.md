@@ -9,5 +9,5 @@
 ## Veicamo darbu saraksts (Pārbaudes darbs):
 - [x] Papildināt projektu ar transportlīdzekļiem un nodrošināt visas vajadzīgās funkcionalitātes tām
 - [x] Ieviest jaunus skaņas efektus, priekš jaunajiem transportlīdzekļiem
-- [ ] Realizēt uzvaras ekrānu un, ka spēli ir iespējams sākt no jauna
+- [x] Realizēt uzvaras ekrānu un, ka spēli ir iespējams sākt no jauna
 - [ ] Realizēt sākuma izvēlni ar divām pogām

@@ -16,6 +16,8 @@ public class Objekti : MonoBehaviour
     public GameObject e46;
     public GameObject eskavators;
     public GameObject policija;
+    public GameObject UzvarasLogs;
+    public GameObject AtsaksanasPoga;
 
     //Uzglabās velkamo objektu sākotnējās pozīcijas koordinātas (lai zinātu, kur aizmest objektu, ja tas nolikts nepareizajā vietā)
     //Objekti paliek Public, taču paslēpj no Inspector loga
@@ -53,10 +55,15 @@ public class Objekti : MonoBehaviour
     //Mainīgais atbild par to vai objekts ir nolikts pareizi vai nepareizi
     [HideInInspector]
     public bool vaiIstajaVieta = false;
+    //Uzglabās cik daudz objekti ir nomesti pareizajā vietā
+    [HideInInspector]
+    public int PareiziNolikti = 0;
 
     //Funkcija nostrādā tiklīdz nospiesta play poga
     private void Awake()
     {
+        //Tiek deaktivizēts uzvaras logs lai tas nerādītos uz ekrāna kad tam nevajadzētu rādīties
+        UzvarasLogs.SetActive(false);
         atkrKoord = atkritumuMasina.GetComponent<RectTransform>().localPosition;
         atroKoord = atroMasina.GetComponent<RectTransform>().localPosition;
         bussKoord = autobuss.GetComponent<RectTransform>().localPosition;

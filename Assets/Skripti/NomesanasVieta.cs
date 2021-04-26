@@ -15,6 +15,7 @@ public class NomesanasVieta : MonoBehaviour, IDropHandler
     private float xIzmeruStarpiba, yIzmeruStarpiba;
     //Norādu uz skriptu Objekti
     public Objekti objektuSkripts;
+    
 
     //Nostradā, ja objektu cenšas nomest uz nometamā lauka
     public void OnDrop(PointerEventData notikums)
@@ -43,6 +44,7 @@ public class NomesanasVieta : MonoBehaviour, IDropHandler
                 if ((rotacijasStarpiba <= 9 || (rotacijasStarpiba >= 351 && rotacijasStarpiba <= 360))
                     && (xIzmeruStarpiba <= 0.15 && yIzmeruStarpiba <= 0.15))
                 {
+                  
                     objektuSkripts.vaiIstajaVieta = true;
                     //Nometamo objektu iecentrē nomešanas vietā
                     notikums.pointerDrag.GetComponent<RectTransform>().anchoredPosition =
@@ -179,5 +181,6 @@ public class NomesanasVieta : MonoBehaviour, IDropHandler
                 }
             }
         }
+        
     }
 }

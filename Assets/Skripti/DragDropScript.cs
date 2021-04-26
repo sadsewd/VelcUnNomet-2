@@ -12,6 +12,7 @@ public class DragDropScript : MonoBehaviour, IPointerDownHandler, IBeginDragHand
     private CanvasGroup kanvasGrupa;
     //Vilktā objekta atrašanās vietas koordinātu maiņai
     private RectTransform velkObjektTransf;
+    
 
     void Awake()
     {
@@ -19,6 +20,9 @@ public class DragDropScript : MonoBehaviour, IPointerDownHandler, IBeginDragHand
         kanvasGrupa = GetComponent<CanvasGroup>();
         //Piekļūst objekta RectTransform komponentei
         velkObjektTransf = GetComponent<RectTransform>();
+        //Spēles sākuma tiek paslēpts uzvaras ekrāns un atsāksanas poga
+        objektuSkripts.AtsaksanasPoga.SetActive(false);
+        objektuSkripts.UzvarasLogs.SetActive(false);
     }
 
     //Nostrādā nospiežot peles klikšķi uz objekta
@@ -64,8 +68,18 @@ public class DragDropScript : MonoBehaviour, IPointerDownHandler, IBeginDragHand
         }
         else
         {
+            //tiek uzskaitīts cik daudz pareizi noliktu objektu ir
+            objektuSkripts.PareiziNolikti = objektuSkripts.PareiziNolikti + 1;
+            Debug.Log(objektuSkripts.PareiziNolikti);
             //Ja objekts nolikts pareizajā vietā, izmērā, rotācijā, tad pēdējo vilkto attīra
             objektuSkripts.pedejaisVilktais = null;
+            //tiek pārbaudīts vai ir visi objekti nolikti pareizajā vietā
+            if (objektuSkripts.PareiziNolikti == 11)
+            {
+                //Tākā visi objekti ir nolikti pareizajā vietā tad tiek parādīts uzvaras logs kopā ar atsāksanas pogu
+                objektuSkripts.UzvarasLogs.SetActive(true);
+                objektuSkripts.AtsaksanasPoga.SetActive(true);
+            }
         }
         //Ja viens objekts nomests pareizajā vietā, tad lai varētu turpināt pārvietot pārējos objektus
         objektuSkripts.vaiIstajaVieta = false;
