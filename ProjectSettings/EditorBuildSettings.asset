@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Ainas/SakumaIzvelne.unity
+    guid: 4b813135cc0886a459c5a3d49781a801
+  - enabled: 1
+    path: Assets/Ainas/PilsetasAina.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
